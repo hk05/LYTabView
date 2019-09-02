@@ -323,6 +323,11 @@ extension LYTabItemView: NSDraggingSource {
         draggingRect.size.height = 1
         let dummyImage = NSImage(size: NSSize(width: 1, height: 1))
         dragItem.setDraggingFrame(draggingRect, contents: dummyImage)
+        
+        // Fix bug "There are 0 items on the pasteboard, but 1 drag images. There must be 1 draggingItem per pasteboardItem."
+        // On Mojave and later, write at least one (dummy) item to the pasteboard.
+        pasteItem.setString("dummy", forType: NSPasteboard.PasteboardType.string)
+
         let draggingSession = self.beginDraggingSession(with: [dragItem], event: theEvent, source: self)
         draggingSession.animatesToStartingPositionsOnCancelOrFail = true
     }
