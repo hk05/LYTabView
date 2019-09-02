@@ -1,9 +1,8 @@
 # LYTabView (SPM)
 
 [![Platform](http://img.shields.io/badge/platform-macOS-red.svg?style=flat)](https://developer.apple.com/macos/)
-[![Swift 3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 5](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
-[![Twitter](https://img.shields.io/badge/twitter-@robinlu-blue.svg?style=flat)](http://twitter.com/robinlu)
 
 `LYTabView` is a customized Tab View with modernized tab bar style for Mac OS X.
 
@@ -30,7 +29,7 @@ Used in title bar
 In XCode 11 and above:
 - select File/Swift Packages/Add Package Dependency...
 - paste the url of this git repository: https://github.com/hk05/LYTabView.git
-- select 'development' branch
+- select 'develop' branch
 
 Or You can build it as a stand alone framework and add it into your project.
 
