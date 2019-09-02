@@ -1,4 +1,4 @@
-# LYTabView
+# LYTabView (SPM)
 
 [![Platform](http://img.shields.io/badge/platform-macOS-red.svg?style=flat)](https://developer.apple.com/macos/)
 [![Swift 3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
@@ -27,11 +27,10 @@ Used in title bar
 ![used in title bar](https://raw.githubusercontent.com/robin/LYTabView/master/images/titlebar.gif)
 
 ## Install
-LYTabView supports Carthage. Add following line in `Cartfile`
-
-    github "robin/LYTabView"
-
-Following the [steps](https://github.com/Carthage/Carthage#if-youre-building-for-os-x) to add the framework into your project.
+In XCode 11 and above:
+- select File/Swift Packages/Add Package Dependency...
+- paste the url of this git repository: https://github.com/hk05/LYTabView.git
+- select 'development' branch
 
 Or You can build it as a stand alone framework and add it into your project.
 
@@ -43,3 +42,6 @@ Check the Demo App for the usage
 
 ## License
 LYTabView is available under the MIT license. See the LICENSE file for more info.
+
+## Special Thanks
+Original source: [LYTabView](https://github.com/robin/LYTabView)
