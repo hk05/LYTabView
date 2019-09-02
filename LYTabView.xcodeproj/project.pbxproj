@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,6 +29,7 @@
 		5D0B2EB6231D7E12006596FC /* LYTabView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "LYTabView::LYTabView::Product" /* LYTabView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D0B2EBB231D7ED1006596FC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B2EBA231D7ED1006596FC /* LICENSE */; };
 		5D0B2EBD231D7ED9006596FC /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B2EBC231D7ED9006596FC /* Readme.md */; };
+		5D0B2ECC231D92D0006596FC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B2ECB231D92D0006596FC /* Info.plist */; };
 		OBJ_31 /* LYHoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* LYHoverButton.swift */; };
 		OBJ_32 /* LYTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* LYTabBarView.swift */; };
 		OBJ_33 /* LYTabCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* LYTabCloseButton.swift */; };
@@ -90,6 +91,7 @@
 		5D0B2EB0231D7CBA006596FC /* LYTabViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYTabViewDemo.entitlements; sourceTree = "<group>"; };
 		5D0B2EBA231D7ED1006596FC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5D0B2EBC231D7ED9006596FC /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		5D0B2ECB231D92D0006596FC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../LYTabView/LYTabView/Info.plist; sourceTree = "<group>"; };
 		"LYTabView::LYTabView::Product" /* LYTabView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LYTabView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"LYTabView::LYTabViewTests::Product" /* LYTabViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = LYTabViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* LYTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarView.swift; sourceTree = "<group>"; };
@@ -189,7 +191,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -202,7 +204,6 @@
 				OBJ_24 /* images */,
 				5D0B2EB4231D7E12006596FC /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -216,6 +217,7 @@
 		OBJ_8 /* LYTabView */ = {
 			isa = PBXGroup;
 			children = (
+				5D0B2ECB231D92D0006596FC /* Info.plist */,
 				OBJ_9 /* LYHoverButton.swift */,
 				OBJ_10 /* LYTabBarView.swift */,
 				OBJ_11 /* LYTabCloseButton.swift */,
@@ -313,14 +315,14 @@
 				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "LYTabView" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_20 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +344,7 @@
 				5D0B2EBB231D7ED1006596FC /* LICENSE in Resources */,
 				5D0B2EAB231D7CBA006596FC /* Assets.xcassets in Resources */,
 				5D0B2EBD231D7ED9006596FC /* Readme.md in Resources */,
+				5D0B2ECC231D92D0006596FC /* Info.plist in Resources */,
 				5D0B2EAE231D7CBA006596FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +476,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = LYTabViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.28;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -533,7 +539,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = LYTabViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.28;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -554,9 +563,12 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = LYTabView.xcodeproj/LYTabView_Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../LYTabView/LYTabView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.28;
 				OTHER_CFLAGS = "$(inherited)";
@@ -584,9 +596,12 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = LYTabView.xcodeproj/LYTabView_Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../LYTabView/LYTabView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 0.28;
 				OTHER_CFLAGS = "$(inherited)";
@@ -650,7 +665,8 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -678,12 +694,14 @@
 		OBJ_48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "";
 			};
 			name = Debug;
 		};
 		OBJ_49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "";
 			};
 			name = Release;
 		};
@@ -697,9 +715,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = LYTabView.xcodeproj/LYTabViewTests_Info.plist;
+				INFOPLIST_FILE = Tests/LYTabViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -722,9 +744,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = LYTabView.xcodeproj/LYTabViewTests_Info.plist;
+				INFOPLIST_FILE = Tests/LYTabViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
