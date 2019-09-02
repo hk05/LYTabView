@@ -90,7 +90,7 @@ class LYTabItemView: NSButton {
     }
 
     override static func defaultAnimation(forKey key: NSAnimatablePropertyKey) -> Any? {
-        if key.rawValue == "realBackgroundColor" {
+        if key == "realBackgroundColor" {
             return CABasicAnimation()
         }
         return super.defaultAnimation(forKey: key) as AnyObject?
@@ -351,7 +351,7 @@ extension LYTabItemView: NSDraggingSource {
             self.tabBarView.addSubview(draggingView)
             draggingView.topAnchor.constraint(equalTo: self.tabBarView.topAnchor).isActive = true
             draggingView.bottomAnchor.constraint(equalTo: self.tabBarView.bottomAnchor).isActive = true
-            draggingView.widthAnchor.constraint(equalToConstant: self.frame.width)
+            _ = draggingView.widthAnchor.constraint(equalToConstant: self.frame.width)
             self.draggingViewLeadingConstraint = draggingView.leadingAnchor
                 .constraint(equalTo: self.tabBarView.tabContainerView.leadingAnchor, constant: self.frame.origin.x)
             self.draggingViewLeadingConstraint?.isActive = true
@@ -394,7 +394,7 @@ extension LYTabItemView: NSDraggingSource {
 }
 
 extension LYTabItemView: NSMenuDelegate {
-    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         if menuItem.action == #selector(addNewTab) {
             return (self.tabBarView.addNewTabButtonTarget != nil) && (self.tabBarView.addNewTabButtonAction != nil)
         }

@@ -237,9 +237,9 @@ public class LYTabBarView: NSView {
         tabContainerView.setHuggingPriority(NSLayoutConstraint.Priority.defaultLow, for: .horizontal)
         tabContainerView.setHuggingPriority(NSLayoutConstraint.Priority.defaultLow, for: .vertical)
 
-        packedTabButton = buildBarButton(image: NSImage(named: NSImage.Name.rightFacingTriangleTemplate),
+        packedTabButton = buildBarButton(image: NSImage(named: NSImage.rightFacingTriangleTemplateName),
                                          action: #selector(showPackedList))
-        addTabButton = buildBarButton(image: NSImage(named: NSImage.Name.addTemplate),
+        addTabButton = buildBarButton(image: NSImage(named: NSImage.addTemplateName),
                                       action: #selector(addNewTab))
 
         outterStackView.addView(packedTabButton, in: .bottom)
@@ -310,7 +310,7 @@ public class LYTabBarView: NSView {
     }
 
     public func removeTabViewItem(_ tabviewItem: NSTabViewItem, animated: Bool = false) {
-        if let index = self.packedTabViewItems.index(of: tabviewItem) {
+        if let index = self.packedTabViewItems.firstIndex(of: tabviewItem) {
             removePackedTabItem(at: index)
         }
         self.tabView?.removeTabViewItem(tabviewItem)
@@ -323,7 +323,7 @@ public class LYTabBarView: NSView {
     }
 
     func removeFrom(_ tabViewItem: NSTabViewItem) {
-        if let index = self.tabViewItems.index(of: tabViewItem) {
+        if let index = self.tabViewItems.firstIndex(of: tabViewItem) {
             let dropItems = self.tabViewItems.dropFirst(index+1)
             for tabItem in dropItems {
                 self.tabView?.removeTabViewItem(tabItem)
@@ -332,7 +332,7 @@ public class LYTabBarView: NSView {
     }
 
     private func tabItemViews() -> [LYTabItemView] {
-        return self.tabContainerView.views(in: .center).flatMap { $0 as? LYTabItemView }
+        return self.tabContainerView.views(in: .center).compactMap { $0 as? LYTabItemView }
     }
 
     private func shouldShowCloseButton(_ tabBarItem: NSTabViewItem) -> Bool {
