@@ -221,10 +221,31 @@ class LYTabItemView: NSButton {
         }
     }
 
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        return true
+    }
+    
     override func mouseDown(with theEvent: NSEvent) {
+       
         if let tabViewItem = self.tabViewItem {
+            // print("--> \(self)")
+            
+            if #available(OSX 10.15, *) {
+                let notification = Notification.Name("DidClickAlreadySelectedTab")
+                let tabBarView = self.tabBarView
+                let tabBarViewItem = self.tabViewItem
+                let userinfo = ["tabBarView": tabBarView, "tabBarViewItem": tabBarViewItem]
+                
+                if self.tabViewItem === self.tabBarView.selectedTabView()?.tabViewItem {
+                    NotificationCenter.default.post(name: notification, object: nil, userInfo: userinfo)
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+            
             self.tabBarView.selectTabViewItem(tabViewItem)
         }
+        
     }
 
     override func updateTrackingAreas() {
